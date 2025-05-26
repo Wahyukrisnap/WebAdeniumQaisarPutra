@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qaisar Putra Adenium - Katalog Tanaman Adenium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Qaisar Putra Adenium</h1>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#katalog">Katalog</a></li>
+                    <li><a href="#perawatan">Perawatan</a></li>
+                    <li><a href="#tentang">Tentang Kami</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide active">
+                    <img src="Asset/slider.jpg" alt="Adenium Slider 1">
+                    <div class="slide-content">
+                        <h2>Selamat Datang di Qaisar Putra Adenium</h2>
+                        <p>Koleksi tanaman adenium berkualitas dengan berbagai varietas pilihan</p>
+                        <a href="#katalog" class="btn">Lihat Katalog</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="Asset/sliderr.jpg" alt="Adenium Slider 2">
+                    <div class="slide-content">
+                        <h2>Adenium Koleksi Spesial</h2>
+                        <p>Temukan adenium koleksi langka dan eksklusif</p>
+                        <a href="#katalog" class="btn">Lihat Koleksi</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="Asset/sliderrr.jpeg" alt="Adenium Slider 3">
+                    <div class="slide-content">
+                        <h2>Keindahan Bunga Adenium</h2>
+                        <p>Nikmati keindahan bunga adenium dengan warna-warna menakjubkan</p>
+                        <a href="#katalog" class="btn">Jelajahi Sekarang</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="slider-dots"></div>
+        </div>
+    </section>
+
+    <section id="katalog" class="katalog">
+        <div class="container">
+            <h2 class="section-title">Katalog Tanaman Adenium</h2>
+            <div class="katalog-filter">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="biasa">Adenium Biasa</button>
+                <button class="filter-btn" data-filter="koleksi">Adenium Koleksi</button>
+            </div>
+            <div class="katalog-search">
+                <input type="text" id="search-input" placeholder="Cari tanaman...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="katalog-grid" id="katalog-container">
+                <!-- Katalog items will be loaded here by JavaScript -->
+            </div>
+            <button id="tambah-item-btn" class="btn tambah-item-btn">+ Tambah Item Katalog</button>
+            <div class="tambah-katalog" id="tambah-katalog-form" style="display: none;">
+                <h3>Tambah Tanaman Baru</h3>
+                <form id="tambah-form">
+                    <div class="form-group">
+                        <label for="nama-tanaman">Nama Tanaman</label>
+                        <input type="text" id="nama-tanaman" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jenis-tanaman">Jenis</label>
+                        <select id="jenis-tanaman" required>
+                            <option value="biasa">Adenium Biasa</option>
+                            <option value="koleksi">Adenium Koleksi</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deskripsi-tanaman">Deskripsi</label>
+                        <textarea id="deskripsi-tanaman" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="gambar-tanaman">URL Gambar</label>
+                        <input type="text" id="gambar-tanaman" placeholder="Masukkan URL gambar" required>
+                    </div>
+                    <button type="submit" class="btn">Tambah Tanaman</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="perawatan" class="perawatan">
+        <div class="container">
+            <h2 class="section-title">Cara Merawat Adenium</h2>
+            <div class="perawatan-grid">
+                <div class="perawatan-item">
+                    <div class="icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Pencahayaan</h3>
+                    <p>Adenium membutuhkan sinar matahari penuh minimal 6 jam sehari. Tempatkan tanaman di lokasi yang terkena sinar matahari langsung, seperti di teras, balkon, atau halaman yang tidak terhalang.</p>
+                </div>
+                <div class="perawatan-item">
+                    <div class="icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Penyiraman</h3>
+                    <p>Siram adenium hanya ketika tanah benar-benar kering. Pada musim kemarau, siram 2-3 kali seminggu, sedangkan pada musim hujan cukup 1 kali seminggu atau sesuai kebutuhan. Hindari penyiraman berlebihan yang dapat menyebabkan akar busuk.</p>
+                </div>
+                <div class="perawatan-item">
+                    <div class="icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Media Tanam</h3>
+                    <p>Gunakan media tanam yang memiliki drainase baik, seperti campuran tanah, pasir, sekam bakar, dan kompos dengan perbandingan 1:1:1:1. Pastikan pot memiliki lubang drainase yang baik untuk mencegah genangan air.</p>
+                </div>
+                <div class="perawatan-item">
+                    <div class="icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Pemupukan</h3>
+                    <p>Berikan pupuk NPK dengan kandungan fosfor tinggi (seperti NPK 10-30-10) setiap 3-4 minggu sekali untuk mendorong pembungaan. Kurangi pemupukan saat musim hujan atau saat tanaman tidak aktif tumbuh.</p>
+                </div>
+                <div class="perawatan-item">
+                    <div class="icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Pemangkasan</h3>
+                    <p>Lakukan pemangkasan untuk membentuk tanaman dan mendorong percabangan. Pangkas ujung batang atau cabang yang terlalu panjang saat tanaman aktif tumbuh. Gunakan alat yang steril untuk mencegah infeksi.</p>
+                </div>
+                <div class="perawatan-item">
+                    <div class="icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>Pengendalian Hama</h3>
+                    <p>Awasi tanaman dari serangan kutu putih, tungau, dan ulat. Semprotkan insektisida atau larutan sabun jika ditemukan hama. Periksa tanaman secara rutin, terutama bagian bawah daun dan ketiak daun.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="tentang">
+        <div class="container">
+            <div class="tentang-content">
+                <div class="tentang-image">
+                    <img src="Asset/tentangkami.png" alt="Tentang Qaisar Putra Adenium">
+                </div>
+                <div class="tentang-text">
+                    <h2 class="section-title">Tentang Kami</h2>
+                    <p>Qaisar Putra Adenium didirikan oleh Qaisar Putra Pangestu dengan dedikasi dan kecintaan terhadap tanaman adenium. Kami adalah penggemar dan kolektor adenium yang berpengalaman dalam budidaya berbagai jenis adenium, dari varietas biasa hingga koleksi langka.</p>
+                    <p>Kami berkomitmen untuk menyediakan tanaman adenium berkualitas tinggi dengan harga yang terjangkau. Setiap tanaman kami rawat dengan penuh perhatian untuk memastikan kesehatan dan keindahannya sebelum sampai ke tangan Anda.</p>
+                    <p>Selain menjual tanaman, kami juga berbagi pengetahuan dan tips perawatan adenium untuk membantu Anda sukses dalam memelihara tanaman adenium Anda.</p>
+                    <div class="social-media">
+                        <a href="https://www.instagram.com/qaisarputraadenium?igsh=ZDUwbjMyMXQ2cTFp" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@putraqaisar?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://shopee.co.id/qaisarputra01" target="_blank"><img src="Asset/logo shopee.jpg" alt="Shopee" class="shopee-icon"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="kontak">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <div class="kontak-grid">
+                <div class="kontak-info">
+                    <div class="kontak-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telepon/WhatsApp</h3>
+                            <p><a href="https://wa.me/6285716942804" target="_blank">+62 857-1694-2804</a></p>
+                        </div>
+                    </div>
+                    <div class="kontak-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:putraqaisarpangestu@gmail.com">putraqaisarpangestu@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="kontak-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Jam Operasional</h3>
+                            <p>Senin - Minggu: 21.00 - Selesai WIB</p>
+                        </div>
+                    </div>
+                    <div class="kontak-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Alamat</h3>
+                            <p><a href="https://maps.google.com/?q=Jalan+K+H+Ahmad+Dahlan+Kampung+Petir,+Tangerang" target="_blank" class="maps-link">Jalan K H Ahmad Dahlan Kampung Petir, Tangerang</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="kontak-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" id="nama" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telepon">Telepon</label>
+                            <input type="tel" id="telepon">
+                        </div>
+                        <div class="form-group">
+                            <label for="pesan">Pesan</label>
+                            <textarea id="pesan" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Qaisar Putra Adenium</h2>
+                    <p>Koleksi tanaman adenium berkualitas</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Tautan Cepat</h3>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#katalog">Katalog</a></li>
+                        <li><a href="#perawatan">Perawatan</a></li>
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#kontak">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/qaisarputraadenium?igsh=ZDUwbjMyMXQ2cTFp" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@putraqaisar?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://shopee.co.id/qaisarputra01" target="_blank"><img src="Asset/logo shopee.jpg" alt="Shopee" class="shopee-icon"></a>
+                        <a href="https://wa.me/6285716942804" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h3>Kontak</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> <a href="https://maps.google.com/?q=Jalan+K+H+Ahmad+Dahlan+Kampung+Petir,+Tangerang" target="_blank" class="maps-link">Jalan K H Ahmad Dahlan Kampung Petir, Tangerang</a></p>
+                    <p><i class="fas fa-phone"></i> +62 857-1694-2804</p>
+                    <p><i class="fas fa-envelope"></i> putraqaisarpangestu@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Qaisar Putra x king. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal untuk menampilkan gambar yang lebih besar -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
