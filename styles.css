@@ -415,6 +415,13 @@ nav {
     margin-bottom: 10px;
 }
 
+.katalog-info .item-id {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
 .katalog-info p {
     font-size: 0.9rem;
     color: #666;

@@ -495,6 +495,7 @@ function displayKatalog(items) {
             </div>
             <div class="katalog-info">
                 <h3>${item.nama}</h3>
+                <p class="item-id">ID: ${item.id}</p>
                 <span class="jenis ${item.jenis}">${item.jenis === 'koleksi' ? 'Adenium Koleksi' : 'Adenium Grafting'}</span>
                 <a href="https://wa.me/6285716942804?text=Halo,%20saya%20tertarik%20dengan%20${encodeURIComponent(item.nama)}%20yang%20dijual.%20Apakah%20masih%20tersedia?" class="btn" target="_blank">Pesan Sekarang</a>
                 ${actionButtons}
