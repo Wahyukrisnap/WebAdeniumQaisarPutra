@@ -216,6 +216,154 @@ const defaultKatalog = [
         jenis: "biasa",
         deskripsi: "Adenium dari Vietnam dengan bentuk dan warna bunga yang sangat eksotis.",
         gambar: "Asset/Trung Thing.jpeg"
+    },
+    // Tambahkan item dengan awalan Id sebagai jenis biasa (Adenium Grafting)
+    {
+        id: 33,
+        nama: "Id Banburi",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan karakteristik unik dari varietas Banburi.",
+        gambar: "Asset/Id Banburi.jpeg"
+    },
+    {
+        id: 34,
+        nama: "Id Camelia",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan bunga yang menyerupai bunga Camelia.",
+        gambar: "Asset/Id Camelia.jpeg"
+    },
+    {
+        id: 35,
+        nama: "Id Chili Vermilion",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan warna merah vermilion yang menyala seperti cabai.",
+        gambar: "Asset/Id Chili Vermilion.jpeg"
+    },
+    {
+        id: 36,
+        nama: "Id Citrus Brezee",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan warna segar seperti buah jeruk.",
+        gambar: "Asset/Id Citrus Brezee.jpeg"
+    },
+    {
+        id: 37,
+        nama: "Id Eye of The Storm",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan pola bunga yang menyerupai mata badai.",
+        gambar: "Asset/Id Eye of The Storm.jpeg"
+    },
+    {
+        id: 38,
+        nama: "Id Golden Cicada",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan warna keemasan yang menawan.",
+        gambar: "Asset/Id Golden Cicada.jpeg"
+    },
+    {
+        id: 39,
+        nama: "Id Golden Dragon",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan warna emas kemerahan yang mewah.",
+        gambar: "Asset/Id Golden Dragon.jpeg"
+    },
+    {
+        id: 40,
+        nama: "Id Golden Year",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan warna keemasan yang cerah dan menawan.",
+        gambar: "Asset/Id Golden Year.jpeg"
+    },
+    {
+        id: 41,
+        nama: "Id Hangson",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan karakteristik unik dari varietas Hangson.",
+        gambar: "Asset/Id Hangson.jpeg"
+    },
+    {
+        id: 42,
+        nama: "Id Kindly",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan bunga yang lembut dan menenangkan.",
+        gambar: "Asset/Id Kindly.jpeg"
+    },
+    {
+        id: 43,
+        nama: "Id Kirei",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan bunga yang cantik dan elegan.",
+        gambar: "Asset/Id Kirei.jpeg"
+    },
+    {
+        id: 44,
+        nama: "Id Kumbang",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan warna gelap yang menarik seperti kumbang.",
+        gambar: "Asset/Id Kumbang.jpeg"
+    },
+    {
+        id: 45,
+        nama: "Id Lembayung",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan warna ungu lembayung yang indah.",
+        gambar: "Asset/Id Lembayung.jpeg"
+    },
+    {
+        id: 46,
+        nama: "Id Lumintang",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan karakteristik unik dari varietas Lumintang.",
+        gambar: "Asset/Id Lumintang.jpeg"
+    },
+    {
+        id: 47,
+        nama: "Id Madeira",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan warna dan bentuk yang terinspirasi dari Madeira.",
+        gambar: "Asset/Id Madeira.jpeg"
+    },
+    {
+        id: 48,
+        nama: "Id Mussela",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan karakteristik unik dari varietas Mussela.",
+        gambar: "Asset/Id Mussela.jpeg"
+    },
+    {
+        id: 49,
+        nama: "Id Num Wan",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan bunga yang istimewa dan menarik.",
+        gambar: "Asset/Id Num Wan.jpeg"
+    },
+    {
+        id: 50,
+        nama: "Id Red Spider",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan pola merah yang menyerupai laba-laba.",
+        gambar: "Asset/Id Red Spider.jpeg"
+    },
+    {
+        id: 51,
+        nama: "Id Sakura",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan warna merah muda yang menyerupai bunga Sakura.",
+        gambar: "Asset/Id Sakura.jpeg"
+    },
+    {
+        id: 52,
+        nama: "Id Smile In The Dark Night",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan kontras warna yang menarik seperti senyuman di malam gelap.",
+        gambar: "Asset/Id Smile In The Dark Night.jpeg"
+    },
+    {
+        id: 53,
+        nama: "Id Suntikan Yellow",
+        jenis: "biasa",
+        deskripsi: "Adenium grafting dengan warna kuning cerah yang mencolok.",
+        gambar: "Asset/Id Suntikan Yellow.jpeg"
     }
 ];
 
@@ -237,30 +385,6 @@ const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('.menu');
 
 // Initialize the application
-// Modal functionality
-function openImageModal(imageSrc, caption) {
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const modalCaption = document.getElementById('modalCaption');
-    
-    modal.style.display = 'block';
-    modalImg.src = imageSrc;
-    modalCaption.innerHTML = caption;
-    
-    // Close modal when clicking on X
-    const closeBtn = document.getElementsByClassName('close')[0];
-    closeBtn.onclick = function() {
-        modal.style.display = 'none';
-    }
-    
-    // Close modal when clicking outside the image
-    modal.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize slider
     initSlider();
@@ -329,6 +453,10 @@ function initKatalog() {
     displayKatalog(katalog);
 }
 
+// Variabel global untuk melacak status tampilan katalog
+let showAllItems = false;
+const ITEMS_PER_PAGE = 8; // Jumlah item yang ditampilkan awalnya
+
 function displayKatalog(items) {
     katalogContainer.innerHTML = '';
     
@@ -337,10 +465,29 @@ function displayKatalog(items) {
         return;
     }
     
+    // Tampilkan semua item tanpa batasan
     items.forEach(item => {
         const katalogItem = document.createElement('div');
         katalogItem.classList.add('katalog-item');
         katalogItem.dataset.jenis = item.jenis;
+        katalogItem.dataset.id = item.id;
+        
+        // Cek apakah item ini ditambahkan oleh user (berdasarkan properti userAdded)
+        const isUserAdded = item.userAdded === true;
+        
+        let actionButtons = '';
+        if (isUserAdded) {
+            actionButtons = `
+                <div class="user-actions" style="display: flex; justify-content: flex-end; margin-top: 10px; opacity: 0.6; transition: opacity 0.3s ease;">
+                    <button class="edit-btn" style="background: none; border: none; color: #3498db; margin-right: 10px; cursor: pointer;">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="delete-btn" style="background: none; border: none; color: #e74c3c; cursor: pointer;">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `;
+        }
         
         katalogItem.innerHTML = `
             <div class="katalog-image">
@@ -348,9 +495,9 @@ function displayKatalog(items) {
             </div>
             <div class="katalog-info">
                 <h3>${item.nama}</h3>
-                <span class="jenis ${item.jenis}">${item.jenis === 'koleksi' ? 'Adenium Koleksi' : 'Adenium Biasa'}</span>
-                <p>${item.deskripsi}</p>
+                <span class="jenis ${item.jenis}">${item.jenis === 'koleksi' ? 'Adenium Koleksi' : 'Adenium Grafting'}</span>
                 <a href="https://wa.me/6285716942804?text=Halo,%20saya%20tertarik%20dengan%20${encodeURIComponent(item.nama)}%20yang%20dijual.%20Apakah%20masih%20tersedia?" class="btn" target="_blank">Pesan Sekarang</a>
+                ${actionButtons}
             </div>
         `;
         
@@ -361,7 +508,127 @@ function displayKatalog(items) {
         img.addEventListener('click', function() {
             openImageModal(item.gambar, item.nama);
         });
+        
+        // Tambahkan event listener untuk tombol edit dan delete jika item ditambahkan oleh user
+        if (isUserAdded) {
+            const userActions = katalogItem.querySelector('.user-actions');
+            const editBtn = katalogItem.querySelector('.edit-btn');
+            const deleteBtn = katalogItem.querySelector('.delete-btn');
+            
+            // Tambahkan hover effect untuk tombol-tombol aksi
+            katalogItem.addEventListener('mouseenter', function() {
+                if (userActions) userActions.style.opacity = '1';
+            });
+            
+            katalogItem.addEventListener('mouseleave', function() {
+                if (userActions) userActions.style.opacity = '0.6';
+            });
+            
+            editBtn.addEventListener('click', function() {
+                editKatalogItem(item.id);
+            });
+            
+            deleteBtn.addEventListener('click', function() {
+                deleteKatalogItem(item.id);
+            });
+        }
     });
+}
+
+// Tambahkan fungsi yang hilang
+function openImageModal(imageSrc, caption) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    
+    modal.style.display = 'block';
+    modalImg.src = imageSrc;
+    modalCaption.innerHTML = caption;
+    
+    // Tambahkan event listener untuk tombol close
+    const closeBtn = document.getElementsByClassName('close')[0];
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+    
+    // Tutup modal jika user mengklik di luar gambar
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+}
+
+function editKatalogItem(itemId) {
+    const katalog = JSON.parse(localStorage.getItem('katalog')) || defaultKatalog;
+    const itemToEdit = katalog.find(item => item.id === itemId);
+    
+    if (!itemToEdit) return;
+    
+    // Tampilkan form tambah katalog
+    tambahKatalogForm.style.display = 'block';
+    tambahItemBtn.textContent = '- Sembunyikan Form';
+    
+    // Isi form dengan data item yang akan diedit
+    document.getElementById('nama-tanaman').value = itemToEdit.nama;
+    document.getElementById('jenis-tanaman').value = itemToEdit.jenis;
+    document.getElementById('gambar-tanaman').value = itemToEdit.gambar;
+    
+    // Ubah teks tombol submit
+    const submitBtn = tambahForm.querySelector('button[type="submit"]');
+    submitBtn.textContent = 'Perbarui Tanaman';
+    
+    // Simpan ID item yang diedit ke dalam form
+    tambahForm.dataset.editId = itemId;
+    
+    // Scroll ke form
+    tambahKatalogForm.scrollIntoView({ behavior: 'smooth' });
+    
+    // Override submit handler untuk update
+    const originalSubmitHandler = tambahForm.onsubmit;
+    tambahForm.onsubmit = function(e) {
+        e.preventDefault();
+        
+        const updatedItem = {
+            id: itemId,
+            nama: document.getElementById('nama-tanaman').value,
+            jenis: document.getElementById('jenis-tanaman').value,
+            gambar: document.getElementById('gambar-tanaman').value,
+            userAdded: true
+        };
+        
+        // Update item in katalog
+        const updatedKatalog = katalog.map(item => 
+            item.id === itemId ? updatedItem : item
+        );
+        
+        localStorage.setItem('katalog', JSON.stringify(updatedKatalog));
+        displayKatalog(updatedKatalog);
+        
+        // Reset form
+        tambahForm.reset();
+        tambahKatalogForm.style.display = 'none';
+        tambahItemBtn.textContent = '+ Tambah Item Katalog';
+        submitBtn.textContent = 'Tambah Tanaman';
+        delete tambahForm.dataset.editId;
+        
+        // Restore original submit handler
+        tambahForm.onsubmit = originalSubmitHandler;
+        
+        alert('Tanaman berhasil diperbarui!');
+    };
+}
+
+function deleteKatalogItem(itemId) {
+    if (confirm('Apakah Anda yakin ingin menghapus tanaman ini dari katalog?')) {
+        const katalog = JSON.parse(localStorage.getItem('katalog')) || defaultKatalog;
+        const updatedKatalog = katalog.filter(item => item.id !== itemId);
+        
+        localStorage.setItem('katalog', JSON.stringify(updatedKatalog));
+        displayKatalog(updatedKatalog);
+        
+        alert('Tanaman berhasil dihapus dari katalog!');
+    }
 }
 
 function filterKatalog(filter) {
@@ -387,8 +654,7 @@ function searchKatalog(query) {
     }
     
     const filteredItems = katalog.filter(item => 
-        item.nama.toLowerCase().includes(searchQuery) || 
-        item.deskripsi.toLowerCase().includes(searchQuery)
+        item.nama.toLowerCase().includes(searchQuery)
     );
     
     displayKatalog(filteredItems);
@@ -404,8 +670,8 @@ function addKatalogItem(item) {
         id: newId,
         nama: item.nama,
         jenis: item.jenis,
-        deskripsi: item.deskripsi,
-        gambar: item.gambar
+        gambar: item.gambar,
+        userAdded: true // Tandai bahwa item ini ditambahkan oleh user
     };
     
     katalog.push(newItem);
@@ -459,7 +725,6 @@ function initEventListeners() {
         const newItem = {
             nama: document.getElementById('nama-tanaman').value,
             jenis: document.getElementById('jenis-tanaman').value,
-            deskripsi: document.getElementById('deskripsi-tanaman').value,
             gambar: document.getElementById('gambar-tanaman').value
         };
         
