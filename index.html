@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 </head>
 <body>
     <header>
@@ -70,9 +74,10 @@
     <section id="katalog" class="katalog">
         <div class="container">
             <h2 class="section-title">Katalog Tanaman Adenium</h2>
+            <div id="sync-status" class="sync-status">Status: <span id="connection-status">Memeriksa koneksi...</span></div>
             <div class="katalog-filter">
-                <button class="filter-btn active" data-filter="all">Semua</button>
-                <button class="filter-btn" data-filter="biasa">Adenium Grafting</button>
+                <button class="filter-btn active" data-filter="semua">Semua</button>
+                <button class="filter-btn" data-filter="grafting">Adenium Grafting</button>
                 <button class="filter-btn" data-filter="koleksi">Adenium Koleksi</button>
             </div>
             <div class="katalog-search">
@@ -93,7 +98,7 @@
                     <div class="form-group">
                         <label for="jenis-tanaman">Jenis</label>
                         <select id="jenis-tanaman" required>
-                            <option value="biasa">Adenium Grafting</option>
+                            <option value="grafting">Adenium Grafting</option>
                             <option value="koleksi">Adenium Koleksi</option>
                         </select>
                     </div>
@@ -101,6 +106,10 @@
                     <div class="form-group">
                         <label for="gambar-tanaman">URL Gambar</label>
                         <input type="text" id="gambar-tanaman" placeholder="Masukkan URL gambar" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="deskripsi-tanaman">Deskripsi</label>
+                        <textarea id="deskripsi-tanaman" placeholder="Masukkan deskripsi tanaman" rows="3"></textarea>
                     </div>
                     <button type="submit" class="btn">Tambah Tanaman</button>
                 </form>
