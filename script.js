@@ -809,6 +809,13 @@ const defaultKatalog = [
     deskripsi: "",
     gambar: "Asset/Zahra.jpeg",
   },
+  {
+    id: 120,
+    nama: "Id Ferari",
+    jenis: "grafting",
+    deskripsi: "Adenium Id Ferari dengan keindahan yang unik dan menarik. Varietas grafting premium dengan karakteristik bunga yang indah.",
+    gambar: "Asset/Id Ferari.jpg",
+  },
 
 ];
 
@@ -2055,7 +2062,10 @@ function editKatalogItem(itemId) {
   const katalog = JSON.parse(localStorage.getItem("katalog")) || defaultKatalog;
   const itemToEdit = katalog.find((item) => item.id === itemId);
 
-  if (!itemToEdit) return;
+  if (!itemToEdit) {
+    showNotification('Error', 'Item tidak ditemukan dalam katalog.', true);
+    return;
+  }
 
   // Tampilkan form tambah katalog
   tambahKatalogForm.style.display = "block";
@@ -2113,8 +2123,10 @@ function editKatalogItem(itemId) {
       item.id === itemId ? updatedItem : item
     );
 
-    // Simpan dengan fungsi yang memicu event storage
+    // Simpan dengan fungsi yang memicu event storage dan sinkronisasi ke Firebase
     saveKatalogData(updatedKatalog);
+    
+    // Perbarui tampilan katalog
     displayKatalog(updatedKatalog);
 
     // Reset form
@@ -2127,21 +2139,31 @@ function editKatalogItem(itemId) {
     // Restore original submit handler
     tambahForm.onsubmit = originalSubmitHandler;
 
-    alert("Tanaman berhasil diperbarui!");
+    // Tampilkan notifikasi bahwa item berhasil diperbarui
+    showNotification('Item Diperbarui', `Adenium ${updatedItem.nama} berhasil diperbarui.`, false);
   };
 }
 
 function deleteKatalogItem(itemId) {
-  if (confirm("Apakah Anda yakin ingin menghapus tanaman ini dari katalog?")) {
-    const katalog =
-      JSON.parse(localStorage.getItem("katalog")) || defaultKatalog;
+  const katalog = JSON.parse(localStorage.getItem("katalog")) || defaultKatalog;
+  const itemToDelete = katalog.find((item) => item.id === itemId);
+  
+  if (!itemToDelete) {
+    showNotification('Error', 'Item tidak ditemukan dalam katalog.', true);
+    return;
+  }
+  
+  if (confirm(`Apakah Anda yakin ingin menghapus ${itemToDelete.nama} dari katalog?`)) {
     const updatedKatalog = katalog.filter((item) => item.id !== itemId);
 
-    // Simpan dengan fungsi yang memicu event storage
+    // Simpan dengan fungsi yang memicu event storage dan sinkronisasi ke Firebase
     saveKatalogData(updatedKatalog);
+    
+    // Perbarui tampilan katalog
     displayKatalog(updatedKatalog);
 
-    alert("Tanaman berhasil dihapus dari katalog!");
+    // Tampilkan notifikasi bahwa item berhasil dihapus
+    showNotification('Item Dihapus', `Adenium ${itemToDelete.nama} berhasil dihapus dari katalog.`, false);
   }
 }
 
@@ -2363,9 +2385,16 @@ function addKatalogItem(item) {
   };
 
   katalog.push(newItem);
+  
+  // Simpan data ke localStorage dan Firebase
   saveKatalogData(katalog);
+  
+  // Tampilkan notifikasi bahwa item berhasil ditambahkan
+  showNotification('Item Ditambahkan', `Adenium ${item.nama} berhasil ditambahkan ke katalog.`, false);
 
+  // Perbarui tampilan katalog
   displayKatalog(katalog);
+  
   return newItem; // Return item baru untuk referensi
 }
 
@@ -2749,6 +2778,7 @@ function saveKatalogData(katalog) {
         .then(() => {
           console.log("Data berhasil disimpan ke Firebase");
           updateSyncStatus('online');
+          showNotification('Sinkronisasi', 'Data berhasil disimpan dan disinkronkan ke server', false);
           
           // Simpan juga timestamp terakhir update
           database.ref('lastUpdate').set(firebase.database.ServerValue.TIMESTAMP)
@@ -2762,6 +2792,7 @@ function saveKatalogData(katalog) {
         .catch((error) => {
           console.error("Error menyimpan data ke Firebase:", error);
           updateSyncStatus('offline');
+          showNotification('Sinkronisasi Gagal', 'Data hanya disimpan secara lokal. Perubahan tidak akan terlihat di perangkat lain.', true);
           console.log("Data hanya disimpan secara lokal karena error Firebase:", error.message);
           
           // Coba lagi dengan metode update jika set gagal
@@ -2771,20 +2802,24 @@ function saveKatalogData(katalog) {
               .then(() => {
                 console.log("Data berhasil disimpan ke Firebase menggunakan metode update");
                 updateSyncStatus('online');
+                showNotification('Sinkronisasi', 'Data berhasil disimpan dan disinkronkan ke server', false);
               })
               .catch(updateError => {
                 console.error("Error menyimpan data ke Firebase dengan metode update:", updateError);
                 updateSyncStatus('offline');
+                showNotification('Sinkronisasi Gagal', 'Data hanya disimpan secara lokal. Perubahan tidak akan terlihat di perangkat lain.', true);
               });
           }
         });
     } catch (error) {
       console.error("Error akses Firebase:", error);
       updateSyncStatus('offline');
+      showNotification('Sinkronisasi Gagal', 'Data hanya disimpan secara lokal. Perubahan tidak akan terlihat di perangkat lain.', true);
     }
   } else {
     console.log("Firebase tidak diinisialisasi atau konfigurasi tidak valid. Data hanya disimpan secara lokal.");
     updateSyncStatus('offline');
+    showNotification('Mode Offline', 'Data hanya disimpan secara lokal. Perubahan tidak akan terlihat di perangkat lain.', true);
   }
   
   // Trigger storage event pada tab/window lain (untuk kompatibilitas)
@@ -2889,17 +2924,20 @@ function initEventListeners() {
       nama: document.getElementById("nama-tanaman").value,
       jenis: document.getElementById("jenis-tanaman").value,
       gambar: document.getElementById("gambar-tanaman").value,
-      deskripsi: deskripsiField ? deskripsiField.value : `Adenium dengan keindahan yang unik.`
+      deskripsi: deskripsiField ? deskripsiField.value : `Adenium dengan keindahan yang unik.`,
+      userAdded: true, // Tandai bahwa item ini ditambahkan oleh user
+      dateAdded: new Date().toISOString() // Tambahkan timestamp untuk tracking
     };
 
     const addedItem = addKatalogItem(newItem);
-    tambahForm.reset();
+    
+    if (addedItem) {
+      tambahForm.reset();
 
-    // Hide form after adding item
-    tambahKatalogForm.style.display = "none";
-    tambahItemBtn.textContent = "+ Tambah Item Katalog";
-
-    alert(`Tanaman berhasil ditambahkan ke katalog dengan ID: ${addedItem.id}!`);
+      // Hide form after adding item
+      tambahKatalogForm.style.display = "none";
+      tambahItemBtn.textContent = "+ Tambah Item Katalog";
+    }
   });
 
   // Contact form
