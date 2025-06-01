@@ -823,6 +823,13 @@ const defaultKatalog = [
     deskripsi: "Adenium Id Tangnapaka dengan keindahan yang unik dan menarik. Varietas grafting premium dengan karakteristik bunga yang indah.",
     gambar: "Asset/Id Tangnapaka.jpg",
   },
+  {
+    id: 122,
+    nama: "Id Yu Jiao",
+    jenis: "grafting",
+    deskripsi: "Adenium Id Yu Jiao dengan keindahan yang unik dan menarik. Varietas grafting premium dengan karakteristik bunga yang indah.",
+    gambar: "Asset/Id Yu Jiao.jpg",
+  },
 
 ];
 
