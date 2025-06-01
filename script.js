@@ -816,6 +816,13 @@ const defaultKatalog = [
     deskripsi: "Adenium Id Ferari dengan keindahan yang unik dan menarik. Varietas grafting premium dengan karakteristik bunga yang indah.",
     gambar: "Asset/Id Ferari.jpg",
   },
+  {
+    id: 121,
+    nama: "Id Tangnapaka",
+    jenis: "grafting",
+    deskripsi: "Adenium Id Tangnapaka dengan keindahan yang unik dan menarik. Varietas grafting premium dengan karakteristik bunga yang indah.",
+    gambar: "Asset/Id Tangnapaka.jpg",
+  },
 
 ];
 
