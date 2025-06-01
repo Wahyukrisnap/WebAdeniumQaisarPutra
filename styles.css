@@ -301,14 +301,20 @@ nav {
 /* Sync Status */
 .sync-status {
     text-align: center;
-    margin-bottom: 15px;
-    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-size: 0.7rem;
     color: #666;
     background-color: #f1f1f1;
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 4px 8px;
+    border-radius: 3px;
     display: inline-block;
-    margin: 0 auto 20px;
+    margin: 0 auto 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.sync-status:hover {
+    opacity: 1;
 }
 
 .sync-status.online #connection-status {
@@ -497,6 +503,76 @@ nav {
 
 .tambah-item-btn:hover {
     background-color: #e74c3c;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    gap: 3px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.pagination button:hover {
+    background-color: #ddd;
+}
+
+.pagination button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pagination button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.item-count-info {
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* New Badge Style */
+.new-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .tambah-katalog {
@@ -856,6 +932,61 @@ footer {
     opacity: 0.8;
 }
 
+/* Notification Styles */
+#notification-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 200px;
+}
+
+.notification {
+    padding: 8px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    opacity: 0.8;
+    transform: translateX(50px);
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.notification:hover {
+    opacity: 1;
+}
+
+.notification.error {
+    background-color: #f8d7da;
+    border-left: 2px solid #dc3545;
+    color: #721c24;
+}
+
+.notification.success {
+    background-color: #d4edda;
+    border-left: 2px solid #28a745;
+    color: #155724;
+}
+
+.notification-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: #4CAF50;
+    width: 100%;
+    transition: width linear;
+}
+
+.notification.error .notification-progress {
+    background-color: #F44336;
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 992px) {
     .tentang-content {
@@ -864,6 +995,18 @@ footer {
     
     .kontak-grid {
         grid-template-columns: 1fr;
+    }
+    
+    #notification-container {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    #notification-container {
+        max-width: 180px;
+        bottom: 5px;
+        right: 5px;
     }
 }
 
