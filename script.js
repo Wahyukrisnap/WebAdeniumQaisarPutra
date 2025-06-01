@@ -830,6 +830,13 @@ const defaultKatalog = [
     deskripsi: "Adenium Id Yu Jiao dengan keindahan yang unik dan menarik. Varietas grafting premium dengan karakteristik bunga yang indah.",
     gambar: "Asset/Id Yu Jiao.jpg",
   },
+  {
+    id: 123,
+    nama: "Id Red Blod",
+    jenis: "grafting",
+    deskripsi: "Adenium Id Red Blod dengan keindahan yang unik dan menarik. Varietas grafting premium dengan karakteristik bunga yang indah.",
+    gambar: "Asset/Id Red Blod.jpg",
+  },
 
 ];
 
