@@ -172,7 +172,7 @@ const defaultKatalog = [
   },
   {
     id: 25,
-    nama: "Id Sakura",
+    nama: "Id Swallow",
     jenis: "grafting",
     deskripsi: "",
     gambar: "Asset/Id Sakura.jpeg",
