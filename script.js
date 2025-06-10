@@ -837,6 +837,20 @@ const defaultKatalog = [
     deskripsi: "Adenium Id Red Blod dengan keindahan yang unik dan menarik. Varietas grafting premium dengan karakteristik bunga yang indah.",
     gambar: "Asset/Id Red Blod.jpg",
   },
+  {
+    id: 124,
+    nama: "Bromo",
+    jenis: "biasa",
+    deskripsi: "Adenium Bromo dengan keindahan yang unik dan menarik. Varietas dengan karakteristik bunga yang indah.",
+    gambar: "Asset/Bromo.jpg",
+  },
+  {
+    id: 125,
+    nama: "Fairy Rose",
+    jenis: "biasa",
+    deskripsi: "Adenium Fairy Rose dengan keindahan yang unik dan menarik. Varietas dengan karakteristik bunga yang indah.",
+    gambar: "Asset/Fairy Rose.jpg",
+  },
 
 ];
 
